@@ -11,8 +11,12 @@ namespace Magitek.Models.Roles
     {
         protected HealerSettings(string path) : base(path) { }
 
+        /// <summary>
+        /// Enemy-count ceiling for damage; the default allows ordinary quest packs without
+        /// disabling healer damage. Existing saved limits remain unchanged.
+        /// </summary>
         [Setting]
-        [DefaultValue(3)]
+        [DefaultValue(10)]
         public int StopDamageWhenMoreThanEnemies { get; set; }
 
         [Setting]
